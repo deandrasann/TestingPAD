@@ -1,0 +1,7 @@
+Feature: Patient page access
+
+  Scenario: Apoteker successfully views registered patients
+    Given User is on the dashboard page
+    When User clicks the "Pasien" button on the sidebar
+    Then The system navigates to the pasien page
+    And The system displays a list of registered patients

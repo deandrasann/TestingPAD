@@ -20,4 +20,14 @@ public class LoginPage {
     public void clickLogin(){
         driver.findElement(loginBtn).click();
     }
+
+    By errorMessage = By.id("loginError"); // ID/element dari HTML
+
+    public boolean isErrorMessageDisplayed(){
+        return driver.findElement(errorMessage).isDisplayed();
+    }
+    public String getErrorMessageText(){
+        return driver.findElement(errorMessage).getText();
+    }
+
 }
