@@ -23,6 +23,6 @@ public class LoginTest {
         login.fillUsername("apoteker1");
         login.fillPassword("apoteker123");
         login.clickLogin();
-        result.berandaDisplayed();
+        result.BerandaDisplayed();
     }
 }
