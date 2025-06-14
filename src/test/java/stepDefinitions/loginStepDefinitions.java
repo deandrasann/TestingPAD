@@ -8,11 +8,17 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.example.LoginPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utils.ExtentReportManager;
 import utils.ScreenshotUtil;
+
+import java.time.Duration;
 
 public class loginStepDefinitions {
     WebDriver driver;
@@ -77,4 +83,24 @@ public class loginStepDefinitions {
         Assert.assertTrue(currentUrl.contains("/beranda"), "User not redirected to dashboard");
         driver.quit();
     }
+
+    @When("User enters valid username {string}")
+    public void user_enters_valid_username(String username) {
+        loginPage.fillUsername(username);
+    }
+
+    @When("User enters invalid password {string}")
+    public void user_enters_invalid_password(String password) {
+        loginPage.fillPassword(password);
+    }
+    @Then("An error message {string} should be displayed")
+    public void an_error_message_should_be_displayed(String expectedMessage) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement errorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginError"))); // GANTI jika ID berbeda
+        String actualMessage = errorElement.getText().trim();
+        Assert.assertEquals(actualMessage, expectedMessage);
+    }
+
+
+
 }

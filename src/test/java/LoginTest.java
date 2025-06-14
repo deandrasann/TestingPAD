@@ -1,5 +1,6 @@
 import org.example.LoginPage;
 import org.example.ResultPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -25,5 +26,10 @@ public class LoginTest {
         login.clickLogin();
 
     }
+
+    public String getErrorMessage() {
+        return driver.findElement(By.id("loginError")).getText(); // ID dengan HTML login
+    }
+
 
 }

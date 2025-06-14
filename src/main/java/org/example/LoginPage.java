@@ -23,9 +23,10 @@ public class LoginPage {
 
     By errorMessage = By.id("loginError"); // ID/element dari HTML
 
-    public boolean isErrorMessageDisplayed(){
-        return driver.findElement(errorMessage).isDisplayed();
+    public String getErrorMessage() {
+        return driver.findElement(By.id("loginError")).getText(); // Sesuaikan ID dengan HTML login kamu
     }
+
     public String getErrorMessageText(){
         return driver.findElement(errorMessage).getText();
     }
