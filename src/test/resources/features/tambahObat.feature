@@ -1,6 +1,6 @@
 Feature: Menambah Obat
   Background:
-    Given apoteker berada di dashboard
+    Given apoteker berada di beranda
 
   Scenario:Apoteker menambah obat dengan data yang benar
     When apoteker mengeklik tombol obat pada sidebar

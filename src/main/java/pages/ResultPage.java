@@ -2,6 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ResultPage {
     WebDriver driver;
@@ -13,6 +18,10 @@ public class ResultPage {
     By errorDataType = (By.xpath("//small[contains(text(), 'Harus berupa angka')]"));
     By errorEmptyFill = (By.xpath("//small[contains(text(), 'Field ini wajib diisi')]"));
     By modalDetailObat = (By.id("detailObatModalLabel"));
+    By tidakAdaDetail = (By.id("/html/body/div/div/main/div/div[1]/div[2]/table/tbody/tr/td"));
+    By deletedMsg = By.xpath("/html/body/div/div/main/div/div[1]/text()");
+    By editSuccessMsg = By.xpath("/html/body/div/div/main/div/div[1]/text()");
+    By tidakDelete = By.xpath("//*[@id=\"HapusObatModal12\"]/div/div/div[2]/form/div/button[1]");
 
     public boolean BerandaDisplayed() {
         return driver.findElement(beranda).isDisplayed();
@@ -28,5 +37,20 @@ public class ResultPage {
         return driver.findElement(errorEmptyFill).isDisplayed();
     }
     public boolean detailObatDisplayed(){return driver.findElement(modalDetailObat).isDisplayed();}
+    public boolean tidakAdaDetailDisplayed(){return driver.findElement(modalDetailObat).isDisplayed();}
+    public void showDeleteMsg(){
+        driver.findElement(deletedMsg).click();
+    }
+    public boolean showEditMsg(){
+        return driver.findElement(editSuccessMsg).isDisplayed();
+    }
+    public void confirmNegativeDelete(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement btnTidak = wait.until(ExpectedConditions.elementToBeClickable(tidakDelete));
+        btnTidak.click();
+
+//        driver.findElement(tidakDelete).click();
+    }
+
 
 }

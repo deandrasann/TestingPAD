@@ -28,7 +28,7 @@ public class TambahObatDefinition {
         this.obat = new ObatPage(driver);
     }
 
-    @Given("apoteker berada di dashboard")
+    @Given("apoteker berada di beranda")
     public void apoteker_berada_di_dashboard() {
         loginHelper.loginAsApoteker();
         Assertions.assertTrue(result.BerandaDisplayed());
@@ -105,10 +105,12 @@ public class TambahObatDefinition {
     @Then("tampil pesan error data kosong")
     public void tampilPesanErrorDataKosong() {
         result.errorEmptyFieldDisplayed();
+        Assertions.assertTrue(result.errorEmptyFieldDisplayed());
     }
 
     @Then("tampil pesan salah tipe data")
     public void tampilPesanSalahTipeData() {
         result.errorDataTypeDisplayed();
+        Assertions.assertTrue(result.errorDataTypeDisplayed());
     }
 }
