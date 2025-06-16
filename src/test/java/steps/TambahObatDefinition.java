@@ -93,7 +93,6 @@ public class TambahObatDefinition {
         obat.isiPolaMakan("Sesudah makan");
         obat.isiInformasiTambahan("Tidak untuk anak < 6 tahun");
     }
-
     @And("apoteker menginputkan kekuatan sediaan dengan tipe data string")
     public void apotekerMenginputkanKekuatanSediaanDenganTipeDataString() {
         obat.isiNamaApoteker("apoteker1");
@@ -109,14 +108,10 @@ public class TambahObatDefinition {
         obat.isiPolaMakan("Sesudah makan");
         obat.isiInformasiTambahan("Tidak untuk anak < 6 tahun");
     }
-
     @Then("tampil pesan error data kosong")
     public void tampilPesanErrorDataKosong() {
         result.errorEmptyFieldDisplayed();
-
-
     }
-
     @Then("tampil pesan salah tipe data")
     public void tampilPesanSalahTipeData() {
         result.errorDataTypeDisplayed();
