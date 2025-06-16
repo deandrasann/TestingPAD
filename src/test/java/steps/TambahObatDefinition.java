@@ -50,7 +50,7 @@ public class TambahObatDefinition {
         obat.isiNamaObat("Paracetamol");
         obat.isiBentukObat("Tablet");
         obat.isiGolonganObat("Analgesik");
-        obat.isiKekuatanSediaan("500");
+        obat.ksCreate("500");
         obat.isiEfekSamping("Mual, pusing");
         obat.isiKontradiksi("Hindari pada gangguan hati");
         obat.isiIndikasi("Demam dan nyeri ringan");
@@ -76,7 +76,7 @@ public class TambahObatDefinition {
         obat.isiNamaObat("Paracetamol");
         obat.isiBentukObat("Tablet");
         obat.isiGolonganObat("Analgesik");
-        obat.isiKekuatanSediaan(""); //Kosong
+        obat.ksCreate(""); //Kosong
         obat.isiEfekSamping("Mual, pusing");
         obat.isiKontradiksi("Hindari pada gangguan hati");
         obat.isiIndikasi("Demam dan nyeri ringan");
@@ -92,7 +92,7 @@ public class TambahObatDefinition {
         obat.isiNamaObat("Paracetamol");
         obat.isiBentukObat("Tablet");
         obat.isiGolonganObat("Analgesik");
-        obat.isiKekuatanSediaan("500 mg"); //tipe data string
+        obat.ksCreate("500 mg"); //tipe data string
         obat.isiEfekSamping("Mual, pusing");
         obat.isiKontradiksi("Hindari pada gangguan hati");
         obat.isiIndikasi("Demam dan nyeri ringan");

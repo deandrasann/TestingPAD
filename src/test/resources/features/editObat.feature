@@ -11,7 +11,7 @@ Feature: Mengedit Obat
     And apoteker menekan tombol simpan pada modal edit
     Then data obat berhasil diperbarui
 
-  Scenario: Apoteker gagal mengedit obat karena field wajib kosong
+  Scenario: Apoteker gagal mengedit obat karena field kosong
     When apoteker mengeklik tombol obat pada sidebar
     And apoteker mencari nama obat yang baru ditambahkan
     And apoteker mengeklik tombol edit pada obat

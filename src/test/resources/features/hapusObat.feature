@@ -15,4 +15,3 @@ Feature: Menghapus data Obat
     And apoteker mencari nama obat yang akan dihapus
     And apoteker menekan tombol hapus obat
     Then tekan tidak pada modal hapus
-#    Then obat masih tersedia

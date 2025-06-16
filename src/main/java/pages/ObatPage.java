@@ -19,7 +19,7 @@ public class ObatPage {
     By namaObat = By.name("nama_obat");
     By bentukObat = By.name("bentuk_obat");
     By golObat = By.name("golongan_obat");
-    By kekuatanSediaan = By.name("kekuatan_sediaan");
+    By ksCreate = By.name("kekuatan_sediaan");
     By kekuatanSediaanEdit   = By.xpath("//*[@id=\"kekuatansediaaneditan\"]");
     By efek = By.name("efek_samping");
     By kontradiksi = By.name("kontraindikasi");
@@ -37,9 +37,10 @@ public class ObatPage {
 
     //Delete
     By deleteBtn = By.xpath("/html/body/div/div/main/div/div[1]/div[2]/table/tbody/tr[1]/td[7]/button[3]");
-    By yaDelete = By.xpath("//*[@id=\"HapusObatModal12\"]/div/div/div[2]/form/div/button[2]");
+    By yaDelete = By.xpath("//button[@type='submit' and contains(text(), 'YA')]");
 
-    By editBtn = By.xpath("//*[@id=\"editCategory112\"]");
+
+    By editBtn = By.xpath("//button[normalize-space(text())='Edit']");
     By simpanEditBtn = By.xpath("//*[@id=\"formeditan\"]/div[2]/button[2]");
 
 
@@ -59,6 +60,8 @@ public class ObatPage {
         select.selectByVisibleText(nama);
     }
 
+
+
     public void isiNamaObat(String nama) {
         driver.findElement(namaObat).sendKeys(nama);
     }
@@ -69,6 +72,12 @@ public class ObatPage {
 
     public void isiGolonganObat(String golongan) {
         driver.findElement(golObat).sendKeys(golongan);
+    }
+//    public void isiKetersediaan(String kekuatan) {
+//        driver.findElement(kekuatanSediaan).sendKeys(kekuatan);
+//    }
+    public void ksCreate(String ks){
+        driver.findElement(ksCreate).sendKeys(ks);
     }
 
     public void isiKekuatanSediaan(String kekuatan) {
@@ -121,7 +130,7 @@ public class ObatPage {
         driver.findElement(searchBar).sendKeys(namaObat);
         driver.findElement(submitSearch).click();
     }
-
+    //Delete
     public void showDetail(){
         driver.findElement(detailBtn).click();
     }
@@ -129,8 +138,11 @@ public class ObatPage {
         driver.findElement(deleteBtn).click();
     }
     public void confirmDelete(){
-        driver.findElement(yaDelete).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(yaDelete));
+        button.click();
     }
+
 
 
     public void showEditModal(){

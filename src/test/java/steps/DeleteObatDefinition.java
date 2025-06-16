@@ -4,10 +4,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.ObatPage;
 import pages.ResultPage;
+
+import java.time.Duration;
 
 public class DeleteObatDefinition {
     WebDriver driver;
@@ -28,14 +33,17 @@ public class DeleteObatDefinition {
         obat.showDeleteModal();
     }
 
-    @And("tekan ya pada modal hapus")
+    @Then("tekan ya pada modal hapus")
     public void tekan_ya_pada_modal_hapus() {
         obat.confirmDelete();
     }
 
 
+
     @Then("muncul pesan data berhasil dihapus")
     public void munculPesanDataBerhasilDihapus() {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert-success")));
             result.showDeleteMsg();
     }
 
@@ -43,9 +51,4 @@ public class DeleteObatDefinition {
     public void tekanTidakPadaModalHapus() {
         result.confirmNegativeDelete();
     }
-
-//    @Then("obat masih tersedia")
-//    public void obatMasihTersedia() {
-//        Assert.assertFalse(result.tidakAdaDetailDisplayed());
-//    }
 }
