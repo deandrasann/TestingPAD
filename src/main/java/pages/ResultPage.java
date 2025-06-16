@@ -12,6 +12,7 @@ public class ResultPage {
     By alertSuccess = By.cssSelector(".alert.alert-success");
     By errorDataType = (By.xpath("//small[contains(text(), 'Harus berupa angka')]"));
     By errorEmptyFill = (By.xpath("//small[contains(text(), 'Field ini wajib diisi')]"));
+    By modalDetailObat = (By.id("detailObatModalLabel"));
 
     public boolean BerandaDisplayed() {
         return driver.findElement(beranda).isDisplayed();
@@ -26,5 +27,6 @@ public class ResultPage {
     public boolean errorEmptyFieldDisplayed(){
         return driver.findElement(errorEmptyFill).isDisplayed();
     }
+    public boolean detailObatDisplayed(){return driver.findElement(modalDetailObat).isDisplayed();}
 
 }

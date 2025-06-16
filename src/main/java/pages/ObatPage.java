@@ -29,6 +29,14 @@ public class ObatPage {
     By infoTambahan = By.name("informasi_tambahan");
     By simpanBtn = By.xpath("//*[@id=\"tambahObatModal\"]/div/div/form/div[2]/button[2]");
 
+    //Detail Obat
+    By searchBar = By.xpath("/html/body/div/div/main/div/div[1]/div[1]/form/div/input");
+    By submitSearch = By.xpath("/html/body/div/div/main/div/div[1]/div[1]/form/div/button");
+    By detailBtn = By.xpath("/html/body/div/div/main/div/div[1]/div[2]/table/tbody/tr[1]/td[7]/button[1]");
+
+
+
+
 
 
 
@@ -91,6 +99,18 @@ public class ObatPage {
 
     public void showObatBaru() {
         driver.findElement(simpanBtn).click();
+    }
+
+    //Detail
+
+    public void searchObat (String namaObat){
+        driver.findElement(searchBar).click();
+        driver.findElement(searchBar).sendKeys(namaObat);
+        driver.findElement(submitSearch).click();
+    }
+
+    public void showDetail(){
+        driver.findElement(detailBtn).click();
     }
 
 

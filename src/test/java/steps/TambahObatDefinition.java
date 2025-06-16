@@ -13,40 +13,38 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TambahObatDefinition {
-    private WebDriver driver;
-    private ResultPage result;
+     WebDriver driver;
+     ResultPage result;
     LoginStepHelper loginHelper;
     DashboardPage dashboard;
     ObatPage obat;
 
 
-    @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.get("http://127.0.0.1:8000/login");
-        driver.manage().window().maximize();
-        result = new ResultPage(driver);
-        loginHelper = new LoginStepHelper(driver);
+    public TambahObatDefinition() {
+        this.driver = Hooks.driver; // ambil driver dari Hooks
+        this.result = new ResultPage(driver);
+        this.loginHelper = new LoginStepHelper(driver);
+        this.dashboard = new DashboardPage(driver);
+        this.obat = new ObatPage(driver);
     }
 
     @Given("apoteker berada di dashboard")
     public void apoteker_berada_di_dashboard() {
         loginHelper.loginAsApoteker();
         Assertions.assertTrue(result.BerandaDisplayed());
-
     }
 
     @When("apoteker mengeklik tombol obat pada sidebar")
     public void apoteker_mengeklik_tombol_obat_pada_sidebar() {
-        dashboard = new DashboardPage(driver);
+//        dashboard = new DashboardPage(driver);
         dashboard.showObatPage();
     }
-    @When("apoteker mengeklik tombol tambah obat")
+    @And("apoteker mengeklik tombol tambah obat")
     public void apoteker_mengeklik_tombol_tambah_obat() {
-        obat = new ObatPage(driver);
+//        obat = new ObatPage(driver);
         obat.clickTambahObat();
     }
-    @When("apoteker mengisi seluruh field dengan valid")
+    @And("apoteker mengisi seluruh field dengan valid")
     public void apoteker_mengisi_seluruh_field_dengan_valid() {
         obat.isiNamaApoteker("apoteker1");
         obat.isiNamaObat("Paracetamol");
@@ -62,7 +60,7 @@ public class TambahObatDefinition {
         obat.isiInformasiTambahan("Tidak untuk anak < 6 tahun");
     }
 
-    @When("apoteker menekan tombol simpan")
+    @And("apoteker menekan tombol simpan")
     public void apoteker_menekan_tombol_simpan() {
         obat.showObatBaru(); // klik tombol simpan
     }
@@ -107,8 +105,6 @@ public class TambahObatDefinition {
     @Then("tampil pesan error data kosong")
     public void tampilPesanErrorDataKosong() {
         result.errorEmptyFieldDisplayed();
-
-
     }
 
     @Then("tampil pesan salah tipe data")
