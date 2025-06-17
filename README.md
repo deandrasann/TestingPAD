@@ -6,14 +6,15 @@ Proyek ini merupakan implementasi **automated UI testing** untuk sistem manajeme
 
 ## 🚀 Tech Stack
 
-- **Java 21**
-- **Selenium WebDriver 4.28.1**
-- **Cucumber-Java** (Gherkin-based BDD)
-- **JUnit 5**
-- **ExtentReports** (HTML reporting)
-- **Maven** (build & dependency management)
-- **Google Chrome** (versi 137.x)
-- **WebDriverManager / Chromedriver manual config**
+![Java](https://img.shields.io/badge/-Java-007396?logo=java&logoColor=white)
+![Selenium](https://img.shields.io/badge/-Selenium-43B02A?logo=selenium&logoColor=white)
+![Cucumber](https://img.shields.io/badge/-Cucumber-23D96C?logo=cucumber&logoColor=white)
+![JUnit5](https://img.shields.io/badge/-JUnit%205-25A162?logo=java&logoColor=white)
+![ExtentReports](https://img.shields.io/badge/-ExtentReports-FF6F00?logo=report&logoColor=white)
+![Maven](https://img.shields.io/badge/-Maven-C71A36?logo=apachemaven&logoColor=white)
+![Chrome](https://img.shields.io/badge/-Chrome-4285F4?logo=googlechrome&logoColor=white)
+![Gherkin](https://img.shields.io/badge/-Gherkin-5C2D91?logo=gherkin&logoColor=white)
+
 
 ---
 
