@@ -19,7 +19,8 @@ public class ObatPage {
     By namaObat = By.name("nama_obat");
     By bentukObat = By.name("bentuk_obat");
     By golObat = By.name("golongan_obat");
-    By kekuatanSediaan = By.name("kekuatan_sediaan");
+    By ksCreate = By.name("kekuatan_sediaan");
+    By kekuatanSediaanEdit   = By.xpath("//*[@id=\"kekuatansediaaneditan\"]");
     By efek = By.name("efek_samping");
     By kontradiksi = By.name("kontraindikasi");
     By indikasi = By.name("indikasi");
@@ -28,6 +29,20 @@ public class ObatPage {
     By polaMakan = By.name("pola_makan");
     By infoTambahan = By.name("informasi_tambahan");
     By simpanBtn = By.xpath("//*[@id=\"tambahObatModal\"]/div/div/form/div[2]/button[2]");
+
+    //Detail Obat
+    By searchBar = By.xpath("/html/body/div/div/main/div/div[1]/div[1]/form/div/input");
+    By submitSearch = By.xpath("/html/body/div/div/main/div/div[1]/div[1]/form/div/button");
+    By detailBtn = By.xpath("/html/body/div/div/main/div/div[1]/div[2]/table/tbody/tr[1]/td[7]/button[1]");
+
+    //Delete
+    By deleteBtn = By.xpath("/html/body/div/div/main/div/div[1]/div[2]/table/tbody/tr[1]/td[7]/button[3]");
+    By yaDelete = By.xpath("//button[@type='submit' and contains(text(), 'YA')]");
+
+
+    By editBtn = By.className("editCategory");
+    By simpanEditBtn = By.xpath("//*[@id=\"formeditan\"]/div[2]/button[2]");
+
 
 
 
@@ -45,6 +60,8 @@ public class ObatPage {
         select.selectByVisibleText(nama);
     }
 
+
+
     public void isiNamaObat(String nama) {
         driver.findElement(namaObat).sendKeys(nama);
     }
@@ -56,9 +73,22 @@ public class ObatPage {
     public void isiGolonganObat(String golongan) {
         driver.findElement(golObat).sendKeys(golongan);
     }
+//    public void isiKetersediaan(String kekuatan) {
+//        driver.findElement(kekuatanSediaan).sendKeys(kekuatan);
+//    }
+    public void ksCreate(String ks){
+        driver.findElement(ksCreate).sendKeys(ks);
+    }
 
     public void isiKekuatanSediaan(String kekuatan) {
-        driver.findElement(kekuatanSediaan).sendKeys(kekuatan);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement field = wait.until(ExpectedConditions.elementToBeClickable(kekuatanSediaanEdit));
+        field.sendKeys(kekuatan);
+    }
+    public void hapusKekuatanSediaan() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement field = wait.until(ExpectedConditions.elementToBeClickable(kekuatanSediaanEdit));
+        field.clear();
     }
 
     public void isiEfekSamping(String efekSmp) {
@@ -92,6 +122,42 @@ public class ObatPage {
     public void showObatBaru() {
         driver.findElement(simpanBtn).click();
     }
+
+    //Detail
+
+    public void searchObat (String namaObat){
+        driver.findElement(searchBar).click();
+        driver.findElement(searchBar).sendKeys(namaObat);
+        driver.findElement(submitSearch).click();
+    }
+    //Delete
+    public void showDetail(){
+        driver.findElement(detailBtn).click();
+    }
+    public void showDeleteModal() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement deleteButton = wait.until(ExpectedConditions.elementToBeClickable(deleteBtn));
+        deleteButton.click();
+    }
+    public void confirmDelete(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(yaDelete));
+        button.click();
+    }
+
+
+    // fix joe
+    public void showEditModal(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(editBtn));
+        button.click();
+    }
+    // fix joe
+    public void simpanEdit(){
+        driver.findElement(simpanEditBtn).click();
+    }
+
+
 
 
 }
