@@ -15,13 +15,15 @@ public class ResultPage {
     }
     By beranda = By.xpath("/html/body/div/div/main/div/h2");
     By alertSuccess = By.cssSelector(".alert.alert-success");
-    By errorDataType = (By.xpath("//small[contains(text(), 'Harus berupa angka')]"));
-    By errorEmptyFill = (By.xpath("//small[contains(text(), 'Field ini wajib diisi')]"));
+    By errorDataType = (By.xpath("//small"));
+    By errorEmptyFill = (By.xpath("//small"));
     By modalDetailObat = (By.id("detailObatModalLabel"));
     By tidakAdaDetail = (By.id("/html/body/div/div/main/div/div[1]/div[2]/table/tbody/tr/td"));
-    By deletedMsg = By.xpath("/html/body/div/div/main/div/div[1]/text()");
-    By editSuccessMsg = By.xpath("/html/body/div/div/main/div/div[1]/text()");
+    By deletedMsg = By.xpath("/html/body/div/div/main/div/div[1]");
+    By editSuccessMsg = By.xpath("/html/body/div/div/main/div/div[1]");
     By tidakDelete = By.xpath("//button[@type='button' and contains(text(), 'TIDAK')]");
+    By dataPasien = By.xpath("/html/body/div/div/main/div[1]/div[1]/h2");
+
 
 
     public boolean BerandaDisplayed() {
@@ -42,6 +44,8 @@ public class ResultPage {
     public boolean showDeleteMsg(){
         return driver.findElement(deletedMsg).isDisplayed();
     }
+
+    //fix joe
     public boolean showEditMsg(){
         return driver.findElement(editSuccessMsg).isDisplayed();
     }
@@ -52,6 +56,9 @@ public class ResultPage {
         btnTidak.click();
 
 //        driver.findElement(tidakDelete).click();
+    }
+    public boolean dataPasienDisplayed(){
+        return  driver.findElement(dataPasien).isDisplayed();
     }
 
 

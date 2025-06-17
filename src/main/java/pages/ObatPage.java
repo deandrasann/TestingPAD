@@ -40,7 +40,7 @@ public class ObatPage {
     By yaDelete = By.xpath("//button[@type='submit' and contains(text(), 'YA')]");
 
 
-    By editBtn = By.xpath("//button[normalize-space(text())='Edit']");
+    By editBtn = By.className("editCategory");
     By simpanEditBtn = By.xpath("//*[@id=\"formeditan\"]/div[2]/button[2]");
 
 
@@ -134,8 +134,10 @@ public class ObatPage {
     public void showDetail(){
         driver.findElement(detailBtn).click();
     }
-    public void showDeleteModal(){
-        driver.findElement(deleteBtn).click();
+    public void showDeleteModal() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement deleteButton = wait.until(ExpectedConditions.elementToBeClickable(deleteBtn));
+        deleteButton.click();
     }
     public void confirmDelete(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -144,10 +146,13 @@ public class ObatPage {
     }
 
 
-
+    // fix joe
     public void showEditModal(){
-        driver.findElement(editBtn).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(editBtn));
+        button.click();
     }
+    // fix joe
     public void simpanEdit(){
         driver.findElement(simpanEditBtn).click();
     }

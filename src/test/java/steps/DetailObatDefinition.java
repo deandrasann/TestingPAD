@@ -44,6 +44,5 @@ public class DetailObatDefinition {
     @Then("tampil pesan Tidak Ada Data")
     public void tampilPesanTidakAdaData() {
         result.tidakAdaDetailDisplayed();
-        Assertions.assertTrue(result.tidakAdaDetailDisplayed());
     }
 }

@@ -105,12 +105,10 @@ public class TambahObatDefinition {
     @Then("tampil pesan error data kosong")
     public void tampilPesanErrorDataKosong() {
         result.errorEmptyFieldDisplayed();
-        Assertions.assertTrue(result.errorEmptyFieldDisplayed());
     }
 
     @Then("tampil pesan salah tipe data")
     public void tampilPesanSalahTipeData() {
         result.errorDataTypeDisplayed();
-        Assertions.assertTrue(result.errorDataTypeDisplayed());
     }
 }

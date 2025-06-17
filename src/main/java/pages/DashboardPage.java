@@ -15,5 +15,9 @@ public class DashboardPage {
         driver.findElement(obatBtn).click();
     }
 
+    By pasienBtn = By.xpath("//*[@id=\"sidebar-nav\"]/a[4]");
+    public void showPasienPage(){
+        driver.findElement(pasienBtn).click();
+    }
 
 }

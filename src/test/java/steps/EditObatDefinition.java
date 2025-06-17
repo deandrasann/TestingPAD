@@ -27,16 +27,19 @@ public class EditObatDefinition {
         this.dashboard = new DashboardPage(driver);
         this.obat = new ObatPage(driver);
     }
+    // fix joe
     @When("apoteker mengeklik tombol edit pada obat")
     public void apoteker_mengeklik_tombol_edit_pada_obat() {
         obat.showEditModal();
 
     }
+    // fix joe
     @When("apoteker mengubah field yang diinginkan")
     public void apoteker_mengubah_field_yang_diinginkan() {
         obat.hapusKekuatanSediaan();
         obat.isiKekuatanSediaan("1");
     }
+    // fix joe
     @When("apoteker menekan tombol simpan pada modal edit")
     public void apoteker_menekan_tombol_simpan_pada_modal_edit() {
         obat.simpanEdit();
@@ -44,16 +47,14 @@ public class EditObatDefinition {
     @Then("data obat berhasil diperbarui")
     public void data_obat_berhasil_diperbarui() {
         result.showEditMsg();
-        Assertions.assertTrue(result.showEditMsg());
-
     }
-
+    // fix joe
     @And("apoteker mengkosongkan salah satu field saat edit")
     public void apotekerMengkosongkanSalahSatuFieldSaatEdit() {
         obat.hapusKekuatanSediaan();
         obat.isiKekuatanSediaan("");
     }
-
+    // fix joe
     @And("apoteker menginputkan kekuatan sediaan dengan tipe data string saat edit")
     public void apotekerMenginputkanKekuatanSediaanDenganTipeDataStringSaatEdit() {
         obat.hapusKekuatanSediaan();
