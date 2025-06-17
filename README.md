@@ -55,7 +55,7 @@ Proyek ini merupakan implementasi **automated UI testing** untuk sistem manajeme
 
 ## 🔗 Tautan Terkait
 - 📊 **Projek PAD**:  
-  [https://app.qase.io/project/UA](https://github.com/deandrasann/PAD1/tree/dea)
+  [https://github.com/deandrasann/PAD1/tree/dea](https://github.com/deandrasann/PAD1/tree/dea)
 
 - 📊 **Qase Test Management**:  
   [https://app.qase.io/project/UA](https://app.qase.io/project/UA)
