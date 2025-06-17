@@ -1,6 +1,6 @@
 # 🧪 UI Automation Testing - Aplikasi Manajemen Obat & Pasien
 
-Proyek ini merupakan implementasi **automated UI testing** untuk sistem manajemen obat dan pasien yang dikembangkan dengan menggunakan **Selenium WebDriver** dan **Cucumber BDD (Behavior Driven Development)**.
+Proyek ini merupakan implementasi **automated UI testing** untuk sistem manajemen obat dan pasien menggunakan role apoteker yang dikembangkan dengan menggunakan **Selenium WebDriver** dan **Cucumber BDD (Behavior Driven Development)**.
 
 ---
 
@@ -65,15 +65,4 @@ Proyek ini merupakan implementasi **automated UI testing** untuk sistem manajeme
 
 ---
 
-## 📎 Cara Menjalankan
 
-1. Pastikan sudah install:
-   - Java JDK 21
-   - Maven
-   - Google Chrome
-   - Chromedriver versi 137 sesuai dengan browser
-
-2. Jalankan test dengan perintah:
-
-```bash
-mvn test
