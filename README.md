@@ -1,4 +1,4 @@
-# 🧪 UI Automation Testing - Aplikasi Manajemen Obat & Pasien
+# 🧪 UI Automation Testing -  Apotech.id
 
 Proyek ini merupakan implementasi **automated UI testing** untuk sistem manajemen obat dan pasien menggunakan role apoteker yang dikembangkan dengan menggunakan **Selenium WebDriver** dan **Cucumber BDD (Behavior Driven Development)**.
 
