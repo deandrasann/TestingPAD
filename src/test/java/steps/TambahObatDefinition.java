@@ -5,18 +5,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.DashboardPage;
-import org.example.LoginPage;
-import org.example.ObatPage;
-import org.example.ResultPage;
+import pages.DashboardPage;
+import pages.ObatPage;
+import pages.ResultPage;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeTest;
-
-import java.time.Duration;
 
 public class TambahObatDefinition {
     private WebDriver driver;
@@ -93,6 +87,7 @@ public class TambahObatDefinition {
         obat.isiPolaMakan("Sesudah makan");
         obat.isiInformasiTambahan("Tidak untuk anak < 6 tahun");
     }
+
     @And("apoteker menginputkan kekuatan sediaan dengan tipe data string")
     public void apotekerMenginputkanKekuatanSediaanDenganTipeDataString() {
         obat.isiNamaApoteker("apoteker1");
@@ -108,10 +103,14 @@ public class TambahObatDefinition {
         obat.isiPolaMakan("Sesudah makan");
         obat.isiInformasiTambahan("Tidak untuk anak < 6 tahun");
     }
+
     @Then("tampil pesan error data kosong")
     public void tampilPesanErrorDataKosong() {
         result.errorEmptyFieldDisplayed();
+
+
     }
+
     @Then("tampil pesan salah tipe data")
     public void tampilPesanSalahTipeData() {
         result.errorDataTypeDisplayed();

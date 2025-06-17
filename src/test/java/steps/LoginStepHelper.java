@@ -1,6 +1,6 @@
 package steps;
 
-import org.example.LoginPage;
+import pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 
 public class LoginStepHelper {
